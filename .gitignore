@@ -13,3 +13,4 @@
 # special ignore
 /npm-debug.log
 /node_modules
+/lib-cov

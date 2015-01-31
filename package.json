@@ -38,6 +38,7 @@
     "grunto": "^1.2.1",
     "jscoverage": "^0.5.9",
     "lodash": "^3.0.1",
+    "coveralls": "^2.11.2",
     "nodeunit": "^0.9.0"
   }
 }
