@@ -13,16 +13,6 @@ exports['empty object'] = function (test) {
 	test.done();
 };
 
-exports['empty array'] = function (test) {
-	test.doesNotThrow(function () {
-		var a = [];
-		var constA = constantin(a);
-		test.deepEqual(a, constA);
-	});
-
-	test.done();
-};
-
 exports['small array'] = function (test) {
 	test.doesNotThrow(function () {
 		var a = [1, 2, 3];
@@ -113,6 +103,34 @@ exports['throw if try to set'] = function (test) {
 
 	test.throws(function () {
 		constValue.b[2].b = 1;
+	});
+
+	test.done();
+};
+
+exports['options console'] = function (test) {
+	test.throws(function () {
+		var a = {a: 1, b: 2, c: 3};
+		var constA = constantin(a);
+
+		constA.a = 5;
+	});
+
+	test.doesNotThrow(function () {
+		var a = {a: 1, b: 2, c: 3};
+
+		var c = global.console.error; // save global console
+		global.console.error = function () {}; // override
+
+		var constA = constantin(a, {
+			console: true
+		});
+
+		constA.a = 5;
+
+		global.console.error = c; // restore
+
+		test.deepEqual(a, constA);
 	});
 
 	test.done();
