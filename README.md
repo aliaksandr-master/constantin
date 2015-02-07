@@ -7,3 +7,38 @@
 
 # constantin
 create constant objects/array/... by deep object.defineProperty
+
+```shell
+$ npm install constantin --save
+```
+
+```js
+var constantin = require('constantin');
+
+var myObject = {
+	a: 123,
+	b: {
+	   c: [ 1, 2, 3]
+	}
+	// ...
+};
+
+if (environment === 'development') {
+    myObject = constantin(myObject);
+} else {
+	myObject = constantin(myObject, {
+		console: true
+	});
+}
+
+module.exports = myObject;
+```
+
+If you try to change any value - throws new Error(message)
+
+## options
+### options.console
+Type: `Boolean`, default: `false`
+
+### options.message
+Type: `String`, default: `You can't modify constant object`
