@@ -82,7 +82,7 @@ var constValue = constantin({
 	c: 3,
 	d: '',
 	e: '123'
-}, true);
+});
 
 exports['get'] = function (test) {
 	test.doesNotThrow(function () {
