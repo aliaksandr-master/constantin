@@ -39,6 +39,16 @@ If you try to change any value - throws new Error(message)
 ## options
 ### options.console
 Type: `Boolean`, default: `false`
+```js
+myObject = constantin(myObject, {
+    console: true
+});
+```
 
 ### options.message
 Type: `String`, default: `You can't modify constant object`
+```js
+myObject = constantin(myObject, {
+    message: 'custom message on error!!!'
+});
+```
