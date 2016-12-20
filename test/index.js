@@ -107,31 +107,3 @@ exports['throw if try to set'] = function (test) {
 
 	test.done();
 };
-
-exports['options console'] = function (test) {
-	test.throws(function () {
-		var a = {a: 1, b: 2, c: 3};
-		var constA = constantin(a);
-
-		constA.a = 5;
-	});
-
-	test.doesNotThrow(function () {
-		var a = {a: 1, b: 2, c: 3};
-
-		var c = global.console.error; // save global console
-		global.console.error = function () {}; // override
-
-		var constA = constantin(a, {
-			console: true
-		});
-
-		constA.a = 5;
-
-		global.console.error = c; // restore
-
-		test.deepEqual(a, constA);
-	});
-
-	test.done();
-};
