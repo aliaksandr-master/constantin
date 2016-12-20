@@ -1,6 +1,9 @@
 "use strict";
 
+var jitGrunt = require('jit-grunt');
+
 module.exports = require('grunto')(function(grunt) {
+	jitGrunt(grunt);
 
 	grunt.registerTask('default', [
 		'newer:jshint:all',
