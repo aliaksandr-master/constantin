@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://aliaksandr-pasynkau@github.com/aliaksandr-pasynkau/constantin.git"
+    "url": "https://aliaksandr-master@github.com/aliaksandr-master/constantin.git"
   },
   "keywords": [
     "const",
@@ -22,12 +22,12 @@
     "array",
     "defineProperty"
   ],
-  "author": "aliaksandr-pasynkau",
+  "author": "aliaksandr-master",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aliaksandr-pasynkau/constantin/issues"
+    "url": "https://github.com/aliaksandr-master/constantin/issues"
   },
-  "homepage": "https://github.com/aliaksandr-pasynkau/constantin",
+  "homepage": "https://github.com/aliaksandr-master/constantin",
   "devDependencies": {
     "coveralls": "^2.11.2",
     "grunt": "^1.0.1",
