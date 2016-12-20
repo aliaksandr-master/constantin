@@ -1,6 +1,6 @@
 {
   "name": "constantin",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "create constant objects/arrays by deep object.defineProperty",
   "main": "index.js",
   "scripts": {
