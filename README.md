@@ -13,25 +13,46 @@ $ npm install constantin --save
 ```
 
 ```js
-var constantin = require('constantin');
+const constantin = require('constantin');
 
-var myObject = {
-	a: 123,
-	b: {
-	   c: [ 1, 2, 3]
-	}
-	// ...
+let myObject = {
+  a: 123,
+  b: {
+    c: [ 1, 2, 3]
+  }
 };
 
-if (environment === 'development') {
-    myObject = constantin(myObject);
-} else {
-	myObject = constantin(myObject, {
-		console: true
-	});
+if (environment !== 'production') {
+  const options = {
+    own: false,
+    name: 'myObject'
+  };
+
+  myObject = constantin(myObject, options);
 }
 
-module.exports = myObject;
+const a = constantin.c; // throws error. c is not defined
+
+constantin.c = 4; // throws error. you should not modify constant
 ```
+
+
+## Options
+
+### name 
+optional - `String` - default `""`. - shows in error message
+
+### allowedProps
+optional - `Array(String)` - default `[]`. - ignore prop names
+
+### checkValue(value, pathArray)
+optional - `Function` - default `() => {}`. - additional check value on every depth of Object/Array
+
+### skipSymbols
+optional - `Boolean` - default `true`. - skip every symbols that will be checked by some library
+
+### own
+optional - `Boolean` - default `true`. - checking props in objects by hasOwnProperty  
+
 
 If you try to change any value inside - it throws an exception
