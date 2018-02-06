@@ -1,0 +1,33 @@
+{
+  "automock": false,
+  "notify": true,
+  "roots": [
+    "<rootDir>/lib"
+  ],
+  "resetModules": true,
+  "testEnvironment": "jsdom",
+  "cacheDirectory": "<rootDir>/.tmp/jest-cache",
+  "coverageDirectory": "<rootDir>/.tmp/test-coverage-report",
+  "collectCoverageFrom": [
+    "lib/**/*.js"
+  ],
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/__tests__/"
+  ],
+  "globals": {
+    "process.env.NODE_ENV": "testing"
+  },
+  "moduleFileExtensions": [
+    "",
+    "js"
+  ],
+  "testRegex": "/__tests__/[^_]+.+?\\.test\\.js$",
+  "moduleDirectories": [
+    "node_modules"
+  ],
+  "transform": {
+    "\\.jsx?$": "babel-jest"
+  },
+  "verbose": true
+}
